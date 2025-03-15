@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio - ELYSSA'S STUDIO</title>
+    <link rel="stylesheet" href="styles/style3.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="tracks.php">Portfolio</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="portfolio-section">
+        <h2>Our Portfolio</h2>
+        <div class="carousel-container">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel">
+                <div class="portfolio-item" id="track1">
+                    <h3>Track 1</h3>
+                    <p class="price">$200</p>
+                </div>
+                <div class="portfolio-item" id="track2">
+                    <h3>Track 2</h3>
+                    <p class="price">$200</p>
+                </div>
+                <div class="portfolio-item" id="track3">
+                    <h3>Track 3</h3>
+                    <p class="price">$200</p>
+                </div>
+                <div class="portfolio-item" id="track4">
+                    <h3>Track 4</h3>
+                    <p class="price">$150</p>
+                </div>
+                <div class="portfolio-item" id="track5">
+                    <h3>Track 5</h3>
+                    <p class="price">$200</p>
+                </div>
+            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        let index = 0;
+        function moveSlide(step) {
+            const slides = document.querySelectorAll('.portfolio-item');
+            index = (index + step + slides.length) % slides.length;
+            document.querySelector('.carousel').style.transform = `translateX(${-index * 100}%)`;
+        }
+    </script>
+</body>
+</html>
